@@ -54,13 +54,17 @@ sentences = f.readlines()
 for sentence in sentences: #한 문장씩
     for word in sentence.split(): #한 문장에 들어있는 한 단어씩
         wordDict[word] += 1 #Counter에 count를 1씩 증가시킨다.        
+        #과제연구 계획서를 불러와 문장 속 단어를 한 단어씩 split시킴
+        #몇 개의 단어를 나오게 할 것인지 정함
+        
         
 word_list = []
 freq_list = []
-for word, freq in wordDict.most_common(20):
+for word, freq in wordDict.most_common(20): #20개의 단어를 나타내게 함
     print (word, freq)
     word_list.append(word)
     freq_list.append(freq)
+#각각의 단어가 몇번 등장했는지 단어와 함께 나타남
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -76,4 +80,5 @@ plt.ylabel('count')
 plt.title('words frequency')
 plt.legend()
 plt.show()
+#그래프의 x축과 y축에 해당하는 단어와 빈도수를 리스트를 만들어 넣어주고 그래프 작성함
 ---------------------
